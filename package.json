@@ -1,6 +1,6 @@
 {
   "name": "pm2-health-custom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Apps health monitor and mail notification module for pm2",
   "main": "App.js",
   "scripts": {
@@ -33,7 +33,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pankleks/pm2-health"
+    "url": "git+https://github.com/pankleks/pm2-health-custom"
   },
   "config": {
     "smtp": {

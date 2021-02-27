@@ -88,7 +88,7 @@ export class Mail {
       to: this._config.mailTo,
       from: this._config.smtp.from || this._config.smtp.user, // use from, if not set -> user
       replyTo: this._config.replyTo,
-      subject: `pm2-health: ${hostname()}, ${message.subject}`,
+      subject: `pm2-health-custom: ${hostname()}, ${message.subject}`,
       html: this._template
         .replace(/<!--\s*body\s*-->/, message.body)
         .replace(/<!--\s*timeStamp\s*-->/, new Date().toISOString()),
@@ -145,7 +145,7 @@ export class GMail extends Mail {
       to: this._config.mailTo,
       from: this._config.smtp.from || this._config.smtp.user, // use from, if not set -> user
       replyTo: this._config.replyTo,
-      subject: `pm2-health: ${hostname()}, ${message.subject}`,
+      subject: `pm2-health-custom: ${hostname()}, ${message.subject}`,
       html: this._template
         .replace(/<!--\s*body\s*-->/, message.body)
         .replace(/<!--\s*timeStamp\s*-->/, new Date().toISOString()),

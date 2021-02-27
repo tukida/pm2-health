@@ -1,4 +1,4 @@
-# pm2-health
+# pm2-health-custom
 This [PM2](http://pm2.keymetrics.io/) module is:
 * Monitoring events (like app exit, restart etc.)
 * Monitoring app exceptions
@@ -9,7 +9,7 @@ With rich config options you can fine-tune monitoring rules.
 
 ## Installation & Upgrade
 
-`pm2 install pm2-health`
+`pm2 install pm2-health-custom`
 
 ## Configuration
 
@@ -18,7 +18,7 @@ After installation run `pm2 conf` to configure module. Alternatively edit `modul
 ### Minimum required config:
 
 ```json
-"pm2-health": {
+"pm2-health-custom": {
     "smtp": {
         "host": "your-smtp-host",
         "port": 587,
@@ -31,7 +31,7 @@ After installation run `pm2 conf` to configure module. Alternatively edit `modul
     "mailTo": "mail1,mail2"
 }
 ```
-> If any of required properties is not defined, `pm2-health` will shutdown. You can check error logs for details.
+> If any of required properties is not defined, `pm2-health-custom` will shutdown. You can check error logs for details.
 
 ### All config options:
 
@@ -73,7 +73,7 @@ After installation run `pm2 conf` to configure module. Alternatively edit `modul
 
 ## Metrics monitoring
 
-`pm2-health` can monitor any PMX metrics defined in your apps.
+`pm2-health-custom` can monitor any PMX metrics defined in your apps.
 
 To configure rules of alerting, setup `metric` section in module config file.
 
@@ -218,11 +218,11 @@ Batch message will be send after `batchPeriodM` elapses or if number of messages
 
 ## Hold notifications temporarily
 
-To hold mail notification: `pm2 trigger pm2-health hold 30`
+To hold mail notification: `pm2 trigger pm2-health-custom hold 30`
 
 > Notifications will restart automatically after 30 minutes.
 
-To unhold immediatelly: `pm2 trigger pm2-health unheld`
+To unhold immediatelly: `pm2 trigger pm2-health-custom unheld`
 
 > All monitoring processes continues, just mail notification is held
 
@@ -234,15 +234,15 @@ Mail uses HTML format. To adjust template, you can edit [Template.html](./Templa
 
 `<!-- timeStamp -->` will be exchanged with event timestamp (UTC).
 
-> `pm2-health` update will override your `Template.html`, so keep backup :blush:
+> `pm2-health-custom` update will override your `Template.html`, so keep backup :blush:
 
 ## Testing mail
 
-To send test mail: `pm2 trigger pm2-health mail`
+To send test mail: `pm2 trigger pm2-health-custom mail`
 
 ## Building
 
-`pm2-health` is written using TypeScript 2.6.1+ with `es2017` target. 
+`pm2-health-custom` is written using TypeScript 2.6.1+ with `es2017` target. 
 
 `es2017` is supported by Node 8+. If you need to use ealier version, build solution using `es5` or `es6` target.
 
